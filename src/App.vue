@@ -12,7 +12,12 @@
         <el-main>
           <Button/>
           <graph></graph>
-          <List/>
+           <graph2></graph2>
+           <div class="overview-list">
+             <overview></overview>
+             <overview></overview>
+             <overview></overview>
+           </div>
         </el-main>
       </el-container>
     </el-container>
@@ -25,7 +30,8 @@ import { Container, Header, Aside, Main, Row, Col } from "element-ui";
 import Nav from "./components/Nav";
 import Button from "./components/Button";
 import Graph from "./components/Graph";
-import List from "./components/List";
+import Graph2 from "./components/Graph2";
+import Overview from "./components/Overview";
 export default {
   name: 'app',
   components: {
@@ -39,7 +45,8 @@ export default {
     'Button':Button,
     'pp-nav': Nav,
     'graph': Graph,
-    'List':List
+    'graph2': Graph2,
+    'overview': Overview
   }
 }
 </script>
@@ -78,5 +85,11 @@ body{
     color: #333;
     text-align: center;
     min-height: calc(100vh - 60px);
+  }
+  .overview-list {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
   }
 </style>
