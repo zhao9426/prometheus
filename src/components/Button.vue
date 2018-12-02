@@ -2,7 +2,12 @@
 <div>
   <div class="box">
     <div>总览</div>
-    <div>数据/总览</div>
+    <div>
+      <el-breadcrumb separator="/">
+      <el-breadcrumb-item><a href="/">数据</a></el-breadcrumb-item>
+      <el-breadcrumb-item>总览</el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
   </div>
   <div class="line"></div>
   <div class="set">
@@ -66,22 +71,20 @@ export default {
   height: 2px;
   background-color: green;
 }
-.box{
-  display:flex;
+.box {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 15px;
   padding-bottom: 20px;
 }
-.set{
+.set {
   display: flex;
   justify-content: flex-start;
   font-size: 15px;
   margin-top: 20px;
 }
-.blueline{
-  width:33.3%;
-  height:2px;
+.blueline {
   background-color: blue;
 }
 .el-row {
@@ -107,7 +110,5 @@ export default {
   padding: 10px 0;
   background-color: #f9fafc;
 }
-</style>
-
 </style>
 

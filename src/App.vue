@@ -12,6 +12,7 @@
         <el-main>
           <Button/>
           <graph></graph>
+          <List/>
         </el-main>
       </el-container>
     </el-container>
@@ -24,6 +25,7 @@ import { Container, Header, Aside, Main, Row, Col } from "element-ui";
 import Nav from "./components/Nav";
 import Button from "./components/Button";
 import Graph from "./components/Graph";
+import List from "./components/List";
 export default {
   name: 'app',
   components: {
@@ -36,7 +38,8 @@ export default {
     'pp-nav': Nav,
     'Button':Button,
     'pp-nav': Nav,
-    'graph': Graph
+    'graph': Graph,
+    'List':List
   }
 }
 </script>
