@@ -9,7 +9,10 @@
         <el-aside width="200px">
           <pp-nav/>
         </el-aside>
-        <el-main><Button/></el-main>
+        <el-main>
+          <Button/>
+          <graph></graph>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -20,6 +23,7 @@
 import { Container, Header, Aside, Main, Row, Col } from "element-ui";
 import Nav from "./components/Nav";
 import Button from "./components/Button";
+import Graph from "./components/Graph";
 export default {
   name: 'app',
   components: {
@@ -30,7 +34,9 @@ export default {
     'el-row': Row,
     'el-col': Col,
     'pp-nav': Nav,
-    'Button':Button
+    'Button':Button,
+    'pp-nav': Nav,
+    'graph': Graph
   }
 }
 </script>
