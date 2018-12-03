@@ -1,9 +1,12 @@
 <template class="card">
-    <div class="box-card">
+    <div class="box-card" :style="{borderTopColor:overview.topLineColor}">
     <div class="card-header">
         <div>{{overview.name}}</div>
-        <div>
-            <span v-for="(op, i) in overview.options" :key="i" v-text="op"></span>
+        <div class="option-list">
+            <span v-for="(op, i) in overview.options" :key="i">
+                <i class="el-icon-search"></i>
+                <span v-text="op"></span>
+            </span>          
         </div>
     </div>
     <div>
@@ -26,6 +29,12 @@ export default {
 }
 </script>
 <style>
+   .box-card {
+       border-top-width: 2px;
+        border-top-style: solid;
+        padding: 8px;
+       min-width: 360px;
+   } 
   .card-header{
       display: flex;
       flex-direction: row;
@@ -37,6 +46,12 @@ export default {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+  }
+  .option-list {
+      flex: 1;
+      text-align: right;
+      font-size: 12px;
+      color: #1890ff;
   }
   .header-item {
       text-align: left;
@@ -58,6 +73,7 @@ export default {
 
   .item-1 {
       flex:1;
+      font-size: 14px;
       color: #1890ff;
       text-align: left;
 

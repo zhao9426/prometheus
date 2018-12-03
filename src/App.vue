@@ -10,8 +10,72 @@
           <pp-nav/>
         </el-aside>
         <el-main>
-          <Button/>
+        <el-row class="box">
+          <el-col>总览</el-col>
+          <el-col>
+            <el-breadcrumb separator="/">
+            <el-breadcrumb-item><a href="/">数据</a></el-breadcrumb-item>
+            <el-breadcrumb-item>总览</el-breadcrumb-item>
+            </el-breadcrumb>
+          </el-col>
+        </el-row>
+        <split-line/>
+        <el-row class="set">
+          <i class="el-icon-setting">运营设置</i><br/>
+          <span style="margin-left:-20px; margin-top:20px;">当前公告：</span>
+        </el-row>
+        <split-line/>
+        <el-row :gutter="8" justify="space-around">
+        <el-col :span="8">
+          <el-row justify="space-between">
+              <el-col :span="6">
+                  <div class="grid-content bg-purple">
+                    <el-button type="primary"><i class="el-icon-star-off">发布公告</i></el-button>
+                  </div>
+                </el-col>
+                <el-col :span="6" :offset="2">
+                  <div class="grid-content bg-purple">
+                    <el-button type="warning"><i class="el-icon-delete">删除公告</i></el-button>
+                  </div>
+                </el-col>
+                <el-col :span="6" :offset="4">
+                  <div class="grid-content bg-purple">
+                    <el-button type="success"><i class="el-icon-warning">更新IP黑名单</i></el-button>
+                  </div>
+                </el-col>
+          </el-row>
+        </el-col>
+        <el-col :span="8">
+          <el-row justify="space-around">
+            <el-col :span="6" :offset="6">
+          <div class="grid-content bg-purple">
+            <el-button type="danger"><i class="el-icon-star-off">自动兑换</i></el-button>
+          </div>
+        </el-col>
+        <el-col :span="6" :offset="6">
+          <div class="grid-content bg-purple">
+            <el-button type="primary"><i class="el-icon-setting">充值兑换设置</i></el-button>
+          </div>
+        </el-col>
+          </el-row>
+        </el-col>
+        <el-col :span="8">
+          <el-row justify="space-around">
+            <el-col :span="6" :offset="6">
+            <div class="grid-content bg-purple">
+            <el-button type="primary"><i class="el-icon-setting">运营设置</i></el-button>
+            </div>
+          </el-col>
+          <el-col :span="6" :offset="6">
+            <div class="grid-content bg-purple">
+              <el-button type="primary"><i class="el-icon-setting">游戏设置</i></el-button>
+            </div>
+          </el-col>
+          </el-row>
+        </el-col>  
+      </el-row>
           <graph></graph>
+          <split-line/>
            <graph2></graph2>
            <div class="overview-list">
              <overview 
@@ -29,10 +93,10 @@
 //import HelloWorld from './components/HelloWorld.vue'
 import { Container, Header, Aside, Main, Row, Col } from "element-ui";
 import Nav from "./components/Nav";
-import Button from "./components/Button";
 import Graph from "./components/Graph";
 import Graph2 from "./components/Graph2";
 import Overview from "./components/Overview";
+import SplitLine from "./components/SplitLine";
 export default {
   name: 'app',
   components: {
@@ -43,11 +107,11 @@ export default {
     'el-row': Row,
     'el-col': Col,
     'pp-nav': Nav,
-    'Button':Button,
     'pp-nav': Nav,
     'graph': Graph,
     'graph2': Graph2,
-    'overview': Overview
+    'overview': Overview,
+    'split-line': SplitLine
   },
   data: function(){
     return ({
@@ -150,34 +214,49 @@ body {
   text-align: center;
   color: #2c3e50;
 }
-.el-header {
-  background-color: #5cacee;
-  color: #fff;
-  text-align: center;
-  line-height: 60px;
-}
-.head-name {
-  width: 200px;
-  border-right: 1px solid #fff;
-}
-
-.el-aside {
-  background-color: #fff;
-  color: #333;
-  text-align: center;
-  min-height: 200px;
-}
-
-.el-main {
-  background-color: #ffffff;
-  color: #333;
-  text-align: center;
-  min-height: calc(100vh - 60px);
-}
-.overview-list {
+ .el-header {
+    background-color: #5CACEE;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+  }
+  .head-name{
+    width: 200px;
+    border-right: 1px solid #fff;
+  }
+  
+  .el-aside {
+    background-color: #FFF;
+    color: #333;
+    text-align: center;
+    min-height: 200px;
+  }
+  .el-main {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    min-height: calc(100vh - 60px);
+  }
+  .overview-list {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+.box {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
   justify-content: space-between;
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+.set {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 15px;
+  margin-top: 20px;
 }
 </style>
