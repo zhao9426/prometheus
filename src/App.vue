@@ -54,7 +54,7 @@ export default {
     overviews: [
         {
             name: "用户盈利排行旁",
-            topLineColor: "red",
+            topLineColor: "#836FFF",
             options: [
                 "游戏选择",
                 "时间选择",
@@ -108,7 +108,7 @@ export default {
         },
         {
             name: "用户输分排行榜",
-            topLineColor: "red",
+            topLineColor: "green",
             options: [
                 "游戏选择",
                 "时间选择",
