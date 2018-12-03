@@ -1,11 +1,13 @@
 <template>
     <el-menu
       default-active="2"
+      :default-openeds="defaultOpens"
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
       >
       <el-submenu
+        
         v-for="(m, i) in menus"
         :key="i"
         :index="String(i)">
@@ -26,7 +28,8 @@
 </style>
 
 <script>
-import { Menu, MenuItem, MenuItemGroup, Submenu } from "element-ui";
+import { menus } from "../mock/data";
+import { Menu, MenuItem, Submenu } from "element-ui";
 export default {
   methods: {
     handleOpen(key, keyPath) {
@@ -38,135 +41,13 @@ export default {
   },
   data: function() {
     return {
-      menus: [
-        {
-          name: "数据",
-          icon: "el-icon-menu",
-          children: [
-            {
-              name: "Table"
-            },
-            {
-              name: "总览"
-            },
-            {
-              name: "没人报告"
-            },
-            {
-              name: "盈亏情况"
-            },
-            {
-              name: "金钱明细"
-            },
-            {
-              name: "充值兑换积分"
-            }
-          ]
-        },
-
-        {
-          name: "游戏情况",
-          icon: "el-icon-location",
-          children: [
-            {
-              name: "Table"
-            },
-            {
-              name: "总览"
-            }
-          ]
-        },
-        {
-          name: "玩家留存",
-          icon: "el-icon-location",
-          children: [
-            {
-              name: "Table"
-            },
-            {
-              name: "总览"
-            }
-          ]
-        },
-        {
-          name: "玩家付费",
-          icon: "el-icon-location",
-          children: [
-            {
-              name: "Table"
-            },
-            {
-              name: "总览"
-            }
-          ]
-        },
-        {
-          name: "行为分析",
-          icon: "el-icon-location",
-          children: [
-            {
-              name: "Table"
-            },
-            {
-              name: "总览"
-            }
-          ]
-        },
-        {
-          name: "渠道",
-          icon: "el-icon-location",
-          children: [
-            {
-              name: "Table"
-            },
-            {
-              name: "总览"
-            }
-          ]
-        },
-        {
-          name: "游戏通知",
-          icon: "el-icon-location",
-          children: [
-            {
-              name: "Table"
-            },
-            {
-              name: "总览"
-            }
-          ]
-        },
-        {
-          name: "游戏用户管理",
-          icon: "el-icon-location",
-          children: [
-            {
-              name: "Table"
-            },
-            {
-              name: "总览"
-            }
-          ]
-        },
-        {
-          name: "游戏管理",
-          icon: "el-icon-location",
-          children: [
-            {
-              name: "Table"
-            },
-            {
-              name: "总览"
-            }
-          ]
-        }
-      ]
+      menus: menus,
+      defaultOpens: ['0'] 
     };
   },
   components: {
     "el-menu": Menu,
     "el-menu-item": MenuItem,
-    "el-menu-item-group": MenuItemGroup,
     "el-submenu": Submenu
   }
 };

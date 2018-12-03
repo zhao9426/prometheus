@@ -11,13 +11,14 @@ export default{
     return {
         data: [],
         date: [],
-        myEcharts: null, //实例
+        myEcharts: null,
         option: {
             xAxis: {
                 type: 'category',
                 data: []
             },
         yAxis: {
+            name: "最近新注册人数",
             type: 'value'
             },
         series: [{

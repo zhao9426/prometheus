@@ -48,7 +48,7 @@ export default {
       align-items: center;
   }
   .option-name{
-      font-size: 20px;
+      font-size: 16px;
   }
   .option-list {
       flex: 1;
@@ -58,13 +58,13 @@ export default {
   }
   .header-item {
       text-align: left;
-      font-size: 16px;
+      font-size: 14px;
       flex: 1;
   }
   .profit {
       flex: 1;
       text-align: left;
-      font-size: 16px;
+      font-size: 14px;
       align-self: flex-start;
   }
 

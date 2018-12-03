@@ -24,15 +24,6 @@ export default{
                     left: 'center',
                     text: '大数据量面积图',
                 },
-                /* toolbox: {
-                    feature: {
-                        dataZoom: {
-                            yAxisIndex: 'none'
-                        },
-                        restore: {},
-                        saveAsImage: {}
-                    }
-                }, */
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
@@ -40,6 +31,7 @@ export default{
                     data: []
                 },
                 yAxis: {
+                    name: "实时在线人数",
                     type: 'value',
                     boundaryGap: [0, '100%']
                 },
@@ -62,7 +54,7 @@ export default{
                 }],
                 series: [
                     {
-                        name:'模拟数据',
+                        name:'数据',
                         type:'line',
                         smooth:true,
                         symbol: 'none',
@@ -71,7 +63,7 @@ export default{
                             color: 'rgb(255, 70, 131)'
                         },
                         areaStyle: {
-                            color: "#EAEEF2"
+                            color: "#fff"
                         },
                         data: []
                     }
