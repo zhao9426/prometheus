@@ -1,17 +1,17 @@
 <template class="card">
     <div class="box-card">
     <div class="card-header">
-        <div>{{name}}</div>
+        <div>{{overview.name}}</div>
         <div>
-            <span v-for="(op, i) in options" :key="i" v-text="op"></span>
+            <span v-for="(op, i) in overview.options" :key="i" v-text="op"></span>
         </div>
     </div>
     <div>
         <div class="list-header">
-            <div class="header-item">{{type}}</div>
+            <div class="header-item">{{overview.type}}</div>
             <div class="profit">金币</div>
         </div>      
-        <div v-for="(o, i ) in data" :key="i" class="list-item">
+        <div v-for="(o, i ) in overview.data" :key="i" class="list-item">
             <div class="item-1">{{o.categray}}</div>
             <div class="item-2">{{o.profit | currency}}</div>
         </div>
@@ -22,35 +22,7 @@
 import { Card } from "element-ui";
 export default {
     name: 'overview',
-    data: function(){
-        return {
-            name: "游戏盈亏",
-            topLineColor: "red",
-            options: [
-                "游戏选择",
-                "时间选择",
-                "渠道选择"
-            ],
-            type: "房间",
-            data:[{
-                categray: "大厅",
-                profit: 4315
-            },{
-                categray: "黑红梅方",
-                profit: 3234
-            },{
-                categray: "百家乐",
-                profit: 2315
-            },{
-                categray: "抢庄牛牛",
-                profit: 5315
-            },
-            {
-                categray: "龙虎斗",
-                profit: 1315
-            }]
-        }
-    }
+    props:['overview'],
 }
 </script>
 <style>
