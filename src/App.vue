@@ -10,9 +10,9 @@
           <pp-nav/>
         </el-aside>
         <el-main>
-        <el-row class="box">
-          <el-col>总览</el-col>
-          <el-col>
+        <el-row class="box" :gutter="20">
+          <el-col :span="1">总览</el-col>
+          <el-col :span="2" :offset="21">
             <el-breadcrumb separator="/">
             <el-breadcrumb-item><a href="/">数据</a></el-breadcrumb-item>
             <el-breadcrumb-item>总览</el-breadcrumb-item>
@@ -22,9 +22,8 @@
         <split-line/>
         <el-row class="set">
           <i class="el-icon-setting">运营设置</i><br/>
-          <span style="margin-left:-20px; margin-top:20px;">当前公告：</span>
         </el-row>
-        <split-line/>
+        <el-row class="message">当前公告：游戏更新完成，如有问题联系在线客服！谢谢大家对我们的支持</el-row>
         <el-row :gutter="8" justify="space-around">
         <el-col :span="8">
           <el-row justify="space-between">
@@ -74,6 +73,7 @@
           </el-row>
         </el-col>  
       </el-row>
+       <split-line/>
           <graph></graph>
           <split-line/>
            <graph2></graph2>
@@ -117,8 +117,8 @@ export default {
     return ({
     overviews: [
         {
-            name: "用户盈利排行旁",
-            topLineColor: "#836FFF",
+            name: "游戏盈亏",
+            topLineColor: "red",
             options: [
                 "游戏选择",
                 "时间选择",
@@ -144,8 +144,8 @@ export default {
             }]
         },
         {
-            name: "游戏盈亏",
-            topLineColor: "red",
+            name: "用户盈利排行旁",
+            topLineColor: "#836FFF",
             options: [
                 "游戏选择",
                 "时间选择",
@@ -206,6 +206,9 @@ export default {
 <style scoped>
 body {
   margin: 0;
+  text-align: left;
+  display:flex;
+  justify-content: space-around;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -249,7 +252,7 @@ body {
 .box {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   font-size: 15px;
   padding-bottom: 20px;
 }
@@ -258,5 +261,12 @@ body {
   justify-content: flex-start;
   font-size: 15px;
   margin-top: 20px;
+}
+.message{
+  display: flex;
+  justify-content: flex-start;
+  font-size:12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 </style>

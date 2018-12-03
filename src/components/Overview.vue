@@ -1,7 +1,7 @@
 <template class="card">
     <div class="box-card" :style="{borderTopColor:overview.topLineColor}">
     <div class="card-header">
-        <div>{{overview.name}}</div>
+        <div class="option-name">{{overview.name}}</div>
         <div class="option-list">
             <span v-for="(op, i) in overview.options" :key="i">
                 <i class="el-icon-search"></i>
@@ -47,6 +47,9 @@ export default {
       justify-content: space-between;
       align-items: center;
   }
+  .option-name{
+      font-size: 20px;
+  }
   .option-list {
       flex: 1;
       text-align: right;
@@ -55,11 +58,13 @@ export default {
   }
   .header-item {
       text-align: left;
+      font-size: 16px;
       flex: 1;
   }
   .profit {
       flex: 1;
       text-align: left;
+      font-size: 16px;
       align-self: flex-start;
   }
 
@@ -80,7 +85,7 @@ export default {
   }
   .item-2 {
       flex: 1;
-      background-color: #7cb305;
+      background-color: #66CDAA;
       text-align: left;
   }
   </style>
